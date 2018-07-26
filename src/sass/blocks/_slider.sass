@@ -1,6 +1,12 @@
 .slider
   position: relative
-  padding-top: 50px
+  height: calc(100vw*300/(3*400))
+  margin-bottom: 50px
+  @media screen and (max-width: $bp-large)
+    height: calc(100vw*300/(2*400))
+  @media screen and (max-width: $bp-small)
+    height: calc(100vw*300/400)
+
   &_wrapper
     display: flex
     position: absolute

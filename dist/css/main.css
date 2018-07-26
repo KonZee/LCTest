@@ -376,7 +376,14 @@ html {
 body {
   overflow-x: hidden;
   max-width: 100vw;
-  min-height: 100vh; }
+  min-height: 100vh;
+  padding-top: 50px; }
+
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto; }
 
 .header {
   position: fixed;
@@ -449,7 +456,14 @@ body {
 
 .slider {
   position: relative;
-  padding-top: 50px; }
+  height: calc(100vw*300/(3*400));
+  margin-bottom: 50px; }
+  @media screen and (max-width: 992px) {
+    .slider {
+      height: calc(100vw*300/(2*400)); } }
+  @media screen and (max-width: 576px) {
+    .slider {
+      height: calc(100vw*300/400); } }
   .slider_wrapper {
     display: flex;
     position: absolute;
@@ -512,3 +526,13 @@ body {
       border-radius: 2px;
       background: #111;
       transform: rotate(-45deg) translate(0, 0); }
+
+.lipsum_container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto; }
+
+.lipsum p {
+  line-height: 1.6;
+  padding: 0 0 0.5rem 0; }

@@ -10,6 +10,6 @@
 - Some other UX-improvments like disabling inactive buttons.
 
 ### What isn't done
-- Vuex and Vue router exist as legacy of boilerplate. Router has only one path to index and it's working correct. And I have no idea how to use Vuex there.
+- Vuex exist as legacy of boilerplate and I have no idea how to use Vuex there.
 - In some cases on mobile one image too high for screen. Without specification I have some ideas how to fix it, but usually it must be decision of product designer/UX. Btw, you can look at sticky header in this moment.
 - Some UX can be better, but it's not about UX.

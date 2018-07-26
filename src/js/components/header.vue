@@ -2,7 +2,7 @@
   .header
     .header_container
       .header_logo
-        a.logo(href="") SuperLogo
+        router-link.logo(:to="{name: 'index'}") SuperLogo
       .header_menu
         .menu
           .menu_burger(v-if="!isDesktop" @click="switchMenu")
@@ -12,11 +12,11 @@
           transition(name="fade")
             ul.menu_items(v-if="isDesktop || showMenu ")
               li.menu_item
-                a.menu_link(href="/") Home
+                router-link.menu_link(:to="{name: 'index'}") Home
               li.menu_item
-                a.menu_link(href="/") About us
+                router-link.menu_link(:to="{name: 'about'}") About us
               li.menu_item
-                a.menu_link(href="/") Contact us
+                router-link.menu_link(:to="{name: 'contact'}") Contact us
 </template>
 
 <script>
