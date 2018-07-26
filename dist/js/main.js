@@ -7871,9 +7871,20 @@ exports.default = {
   methods: {
     getWindowWidth: function getWindowWidth() {
       this.isDesktop = window.innerWidth > 576 ? true : false;
+      this.contentFixation();
     },
     switchMenu: function switchMenu() {
       this.showMenu = !this.showMenu;
+      this.contentFixation();
+    },
+
+    // Prevent content scroll when mobile menu is open
+    contentFixation: function contentFixation() {
+      if (this.showMenu && !this.isDesktop) {
+        document.getElementsByTagName('html')[0].style.overflow = 'hidden';
+      } else {
+        document.getElementsByTagName('html')[0].style.overflow = '';
+      }
     }
   }
 }; //
@@ -8543,8 +8554,17 @@ var routes = [{
   component: _contact2.default
 }];
 
+function scrollBehavior(to, from, savedPosition) {
+  if (savedPosition) {
+    return savedPosition;
+  } else {
+    return { x: 0, y: 0 };
+  }
+}
+
 exports.default = new _vueRouter2.default({
-  routes: routes
+  routes: routes,
+  scrollBehavior: scrollBehavior
 });
 
 /***/ }),

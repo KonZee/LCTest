@@ -34,9 +34,19 @@ export default {
   methods: {
     getWindowWidth () {
       this.isDesktop = window.innerWidth > 576 ? true : false;
+      this.contentFixation();
     },
     switchMenu () {
       this.showMenu = !this.showMenu;
+      this.contentFixation();
+    },
+    // Prevent content scroll when mobile menu is open
+    contentFixation () {
+      if (this.showMenu && !this.isDesktop) {
+        document.getElementsByTagName( 'html' )[0].style.overflow = 'hidden';
+      } else {
+        document.getElementsByTagName( 'html' )[0].style.overflow = '';
+      }
     }
   },
 }
