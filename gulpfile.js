@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const browserSync = require('browser-sync');
+const connect = require('gulp-connect');
 const reload = browserSync.reload;
 const pug = require('gulp-pug');
 const sass = require('gulp-sass');
@@ -44,4 +45,12 @@ gulp.task('sync', ['templates', 'sass'], function() {
   gulp.watch(path.src + 'pug/**/*.pug', ['templates-watch']);
 });
 
-gulp.task('default', ['sync', 'webpack']);
+gulp.task('connect', function() {
+  connect.server({
+    root: './dist',
+    port: 3000
+  });
+});
+
+gulp.task('default', ['connect', 'webpack']);
+gulp.task('dev', ['sync', 'webpack']);
