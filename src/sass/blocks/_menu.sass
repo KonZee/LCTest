@@ -1,0 +1,43 @@
+.menu
+  display: flex
+  align-items: center
+  height: 49px
+
+  &_burger
+    cursor: pointer
+    height: 24px
+    width: 24px
+    padding: 2px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  &_burger-line
+    height: 2px
+    border-radius: 1px
+    background: #999
+
+  &_items
+    display: flex
+    margin: 0
+    padding: 0
+    @media screen and (max-width: $bp-small)
+      position: fixed
+      width: 100vw
+      height: calc(100vh - 50px)
+      left: 0
+      top: 50px
+      background: #fff
+      flex-direction: column
+      z-index: 1
+  &_item
+    display: block
+  &_link
+    display: flex
+    align-items: center
+    height: 49px
+    padding: 0 20px
+    text-decoration: none
+    color: #444
+    transition: color 300ms
+    &:hover
+      color: #999

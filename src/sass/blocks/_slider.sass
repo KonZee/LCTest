@@ -1,0 +1,62 @@
+.slider
+  position: relative
+  padding-top: 50px
+  &_wrapper
+    display: flex
+    position: absolute
+    transition: transform 500ms
+    cursor: pointer
+  &_image
+    width: calc(100vw/3)
+    height: calc(100vw*300/(3*400))
+    pointer-events: none
+    @media screen and (max-width: $bp-large)
+      width: calc(100vw/2)
+      height: calc(100vw*300/(2*400))
+    @media screen and (max-width: $bp-small)
+      width: calc(100vw)
+      height: calc(100vw*300/400)
+
+  &_nav
+    position: relative
+  &_button
+    position: absolute
+    top: 0
+    width: 60px
+    height: calc(100vw*300/(3*400))
+    background: rgba(255,255,255,0.2)
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    transition: opacity 300ms
+    @media screen and (max-width: $bp-large)
+      height: calc(100vw*300/(2*400))
+    @media screen and (max-width: $bp-small)
+      height: calc(100vw*300/400)
+    &__left
+      left: 0
+    &__right
+      right: 0
+      transform: rotate(180deg)
+    &__disabled
+      opacity: 0.05
+  &_arrow
+    width: 40px
+    height: 40px
+    &::before
+      display: block
+      content: ''
+      width: 30px
+      height: 4px
+      border-radius: 2px
+      background: #111
+      transform: rotate(45deg) translate(16px,16px)
+    &::after
+      display: block
+      content: ''
+      width: 30px
+      height: 4px
+      border-radius: 2px
+      background: #111
+      transform: rotate(-45deg) translate(0,0)
