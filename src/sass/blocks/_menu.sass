@@ -38,6 +38,11 @@
     padding: 0 20px
     text-decoration: none
     color: #444
-    transition: color 300ms
-    &:hover
+    border-bottom: 2px solid transparent
+    transition: color 300ms, border-bottom-color 300ms
+    @media screen and (max-width: $bp-small)
+      border-bottom-width: 0
+    &:hover,
+    &__active
       color: #999
+      border-bottom-color: currentColor

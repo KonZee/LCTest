@@ -1,7 +1,7 @@
 .slider
   position: relative
   height: calc(100vw*300/(3*400))
-  margin-bottom: 50px
+  margin-bottom: 30px
   @media screen and (max-width: $bp-large)
     height: calc(100vw*300/(2*400))
   @media screen and (max-width: $bp-small)
@@ -44,7 +44,7 @@
       left: 0
     &__right
       right: 0
-      transform: rotate(180deg)
+      transform: scaleX(-1)
     &__disabled
       opacity: 0.05
   &_arrow

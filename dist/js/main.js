@@ -11138,7 +11138,7 @@ var render = function() {
                   ]
                 )
               : _vm._e(),
-            _c("transition", { attrs: { name: "fade" } }, [
+            _c("transition", { attrs: { name: "menu-fade" } }, [
               _vm.isDesktop || _vm.showMenu
                 ? _c("ul", { staticClass: "menu_items" }, [
                     _c(
@@ -11149,7 +11149,10 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "menu_link",
-                            attrs: { to: { name: "index" } }
+                            attrs: {
+                              to: { name: "index" },
+                              "exact-active-class": "menu_link__active"
+                            }
                           },
                           [_vm._v("Home")]
                         )
@@ -11164,7 +11167,10 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "menu_link",
-                            attrs: { to: { name: "about" } }
+                            attrs: {
+                              to: { name: "about" },
+                              "exact-active-class": "menu_link__active"
+                            }
                           },
                           [_vm._v("About us")]
                         )
@@ -11179,7 +11185,10 @@ var render = function() {
                           "router-link",
                           {
                             staticClass: "menu_link",
-                            attrs: { to: { name: "contact" } }
+                            attrs: {
+                              to: { name: "contact" },
+                              "exact-active-class": "menu_link__active"
+                            }
                           },
                           [_vm._v("Contact us")]
                         )
@@ -11507,7 +11516,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("About us")])
+      _c("h1", { staticClass: "title" }, [_vm._v("About us")])
     ])
   }
 ]
@@ -11594,7 +11603,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("Contact us")])
+      _c("h1", { staticClass: "title" }, [_vm._v("Contact us")])
     ])
   }
 ]

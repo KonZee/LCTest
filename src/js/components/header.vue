@@ -9,14 +9,14 @@
             span.menu_burger-line
             span.menu_burger-line
             span.menu_burger-line
-          transition(name="fade")
+          transition(name="menu-fade")
             ul.menu_items(v-if="isDesktop || showMenu ")
               li.menu_item
-                router-link.menu_link(:to="{name: 'index'}") Home
+                router-link.menu_link(:to="{name: 'index'}"  exact-active-class="menu_link__active") Home
               li.menu_item
-                router-link.menu_link(:to="{name: 'about'}") About us
+                router-link.menu_link(:to="{name: 'about'}"  exact-active-class="menu_link__active") About us
               li.menu_item
-                router-link.menu_link(:to="{name: 'contact'}") Contact us
+                router-link.menu_link(:to="{name: 'contact'}"  exact-active-class="menu_link__active") Contact us
 </template>
 
 <script>

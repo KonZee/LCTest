@@ -2,7 +2,7 @@
   div
     site-header
     .container
-      h1 About us
+      h1.title About us
     lipsum
 </template>
 
